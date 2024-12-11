@@ -1,0 +1,113 @@
+:root {
+  --primary-color: #fff;
+  --secondary-color: #00000090; /* Semi-transparent black */
+  --text-color: #fff;
+  --title-font-size: 4.5rem; /* Responsive font size */
+  --detail-font-size: 1.25rem;
+}
+
+.homePage {
+  background: #fff;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../assets/vecteezy_ai-generated-coffee-cup-on-the-table_35382878.jpeg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.home-container {
+  width: 100%;
+  padding: var(--container-padding);
+  z-index: 2;
+  padding-left: 100px;
+}
+
+.home-text {
+  width: 100%;
+  margin-left: 20px;
+  color: var(--text-color);
+  z-index: 3;
+  position: relative;
+}
+
+.home-title {
+  color: var(--text-color);
+  font-size: var(--title-font-size);
+  font-weight: 600;
+  margin-bottom: 0rem;
+}
+
+.home-detail {
+  font-size: var(--detail-font-size);
+  width: 50%;
+  padding-right: 30px;
+  line-height: 1.6;
+}
+
+.homepage-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--secondary-color);
+  z-index: 1;
+}
+.coupon-link {
+  text-decoration: none;
+  color: #f6ce03;
+}
+
+@media (max-width: 682px) {
+  .home-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+  }
+  .home-text {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-title {
+    font-size: 35px;
+  }
+  .home-detail {
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 850px) {
+  .home-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    padding: 0px;
+  }
+  .home-text {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-detail {
+    text-align: center;
+    padding: 10px;
+    width: 70%;
+  }
+}
