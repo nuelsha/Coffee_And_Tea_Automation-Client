@@ -26,3 +26,7 @@ textarea {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
 }
+.default-link {
+  text-decoration: none;
+  color: #fff;
+}

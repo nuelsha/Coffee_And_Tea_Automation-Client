@@ -1,0 +1,16 @@
+.card-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    
+  }
+  
+  @media (max-width: 632px) {
+    .card-container {
+      padding: 70px 0px;
+    }
+  }
+  

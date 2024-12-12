@@ -8,3 +8,8 @@ body {
 body::-webkit-scrollbar {
   display: none; /* Chrome, Safari, and Edge */
 }
+
+.default-link {
+  text-decoration: none;
+  color: #fff;
+}
