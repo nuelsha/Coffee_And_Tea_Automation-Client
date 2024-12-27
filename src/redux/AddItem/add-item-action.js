@@ -1,8 +1,12 @@
 import { addItemActionTypes } from "./add-item-action-types";
 
-export const setOpen = (item) => {
+export const setOpen = (item, order) => {
+  console.log(order)
   return {
-    type: addItemActionTypes.SHOW_COMPONENT,
+    type:
+      order === true
+        ? addItemActionTypes.SHOW_ORDER_FORM
+        : addItemActionTypes.SHOW_COMPONENT,
     payload: item,
   };
 };

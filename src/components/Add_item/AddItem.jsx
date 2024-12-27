@@ -15,8 +15,8 @@ const AddItem = () => {
   const handleChange = (e) => {
     const value = e.target.value;
 
-    if (!isNaN(value)) {
-      title === "coffee" ? setTotal(value * 50) : setTotal(value * 30);
+    if (!isNaN(value) && value <= 50) {
+      title === "coffee" ? setTotal(value * 12) : setTotal(value * 10);
       value < 50 ? setAmount(value) : setAmount(50);
     } else {
       return;

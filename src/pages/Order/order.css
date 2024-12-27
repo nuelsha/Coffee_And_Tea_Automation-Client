@@ -1,0 +1,29 @@
+.order-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-cards {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 632px) {
+  .order-cards {
+    width: 80%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+
+
