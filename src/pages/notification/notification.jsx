@@ -8,11 +8,8 @@ const Notification = () => {
   return (
     <div className="app-container">
       <Sidebar />
-
       <div className="notification">
-        <div className="notification-header">
-          <Header />
-        </div>
+        <Header />
         <h1 className="notification-title">Notifications</h1>
         <div className="notification-content">
           <NotificationList />

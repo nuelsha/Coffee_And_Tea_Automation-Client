@@ -82,3 +82,113 @@
 .legend-dot.tea {
   background-color: #8b4513;
 }
+.chart-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 1.5rem;
+
+  border-radius: 1rem;
+}
+
+.chart-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.legend-panel {
+  background-color: #27272a;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  min-width: 200px;
+}
+
+.legend-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.title {
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.timeframe-button {
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: #a1a1aa;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.timeframe-button:hover {
+  background-color: #3f3f46;
+}
+
+.chevron-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.legend-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.legend-dot.coffee {
+  background-color: #b08968;
+}
+
+.legend-dot.tea {
+  background-color: #8b4513;
+}
+
+.legend-label {
+  color: white;
+  font-size: 0.875rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .chart-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .legend-panel {
+    width: 100%;
+  }
+}
+.chart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
