@@ -1,0 +1,29 @@
+.app-container {
+  display: flex;
+}
+.notification {
+  width: 100%;
+}
+.notification-header {
+  width: 100%;
+}
+.notification-content {
+  width: 100%;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+notification-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.notification-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
