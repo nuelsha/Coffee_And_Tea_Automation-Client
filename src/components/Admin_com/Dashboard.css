@@ -2,6 +2,7 @@
   flex: 1;
   background-color: #222;
   color: white;
+  padding: 20px;
 }
 .stats {
   display: flex;
@@ -24,8 +25,9 @@
   display: block;
   justify-content: center;
 }
-.chart {
-  margin: 30px;
-}
-.line-chart {
+.charts {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  padding: 20px;
 }

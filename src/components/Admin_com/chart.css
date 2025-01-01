@@ -1,23 +1,44 @@
-.chart-container {
+.progress-container {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;
-  padding: 1.5rem;
-  /* background-color: #18181b; */
+  padding: 2rem;
+  background-color: #2d2d2d;
   border-radius: 1rem;
-  width: 100%;
 }
 
 .chart-wrapper {
   position: relative;
-  width: 200px;
-  height: 200px;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring-circle-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 12px;
+}
+
+.progress-ring-circle {
+  fill: none;
+  stroke-width: 12px;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-ring-circle.coffee {
+  stroke: #b08968;
+}
+
+.progress-ring-circle.tea {
+  stroke: #8b4513;
 }
 
 .legend-panel {
-  background-color: #27272a;
-  padding: 1rem;
+  background-color: #333333;
+  padding: 1.5rem;
   border-radius: 0.75rem;
   min-width: 200px;
 }
@@ -27,38 +48,12 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-}
-
-.title {
   color: white;
-  font-size: 1rem;
-  font-weight: 500;
 }
 
-.timeframe-button {
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: none;
-  border: none;
-  color: #a1a1aa;
-  font-size: 0.875rem;
-  cursor: pointer;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-  transition: background-color 0.2s;
-}
-
-.timeframe-button:hover {
-  background-color: #3f3f46;
-}
-
-.chevron-icon {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
+.time-period {
+  color: #888;
+  font-size: 0.9rem;
 }
 
 .legend-items {
@@ -71,6 +66,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  color: white;
 }
 
 .legend-dot {
@@ -85,22 +81,4 @@
 
 .legend-dot.tea {
   background-color: #8b4513;
-}
-
-.legend-label {
-  color: white;
-  font-size: 0.875rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 640px) {
-  .chart-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .legend-panel {
-    width: 100%;
-  }
 }

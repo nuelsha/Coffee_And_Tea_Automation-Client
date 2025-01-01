@@ -19,11 +19,8 @@ function Dashboard() {
           500 <span>total users</span>
         </div>
       </div>
-      <div className="line-charts">
-        <LineGraph />
-      </div>
       <div className="charts">
-        <Chart />
+        <LineGraph />
       </div>
     </div>
   );

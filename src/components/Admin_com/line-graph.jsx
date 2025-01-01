@@ -98,7 +98,7 @@ export function LineGraph() {
   });
 
   return (
-    <div className="graph-container ">
+    <div className="graph-container">
       <svg viewBox={`0 0 ${width} ${height}`}>
         {/* Grid lines */}
         {gridLinesY}
