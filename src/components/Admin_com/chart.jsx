@@ -1,75 +1,63 @@
 import React from "react";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import "./chart.css";
 
-export default function Chart() {
-  // Calculate SVG parameters
-  const size = 200;
-  const strokeWidth = 12;
-  const radius = (size - strokeWidth) / 2;
-  const center = size / 2;
-  const circumference = 2 * Math.PI * radius;
+const data = [
+  { name: "Coffee", value: 60 },
+  { name: "Tea", value: 40 },
+];
 
-  // Progress values (0-100)
-  const outerProgress = 75; // Coffee progress
-  const innerProgress = 45; // Tea progress
+const COLORS = ["#D97706", "#78350F"];
 
-  // Calculate stroke dasharray and dashoffset
-  const getPathProperties = (progress) => {
-    const dashoffset = circumference - (progress / 100) * circumference;
-    return {
-      strokeDasharray: `${circumference} ${circumference}`,
-      strokeDashoffset: dashoffset,
-    };
-  };
-
-  // Calculate path for circles
-  const getPath = (radius) => {
-    return `M ${center} ${strokeWidth / 2}
-            A ${radius} ${radius} 0 0 1 ${center} ${size - strokeWidth / 2}
-            A ${radius} ${radius} 0 0 1 ${center} ${strokeWidth / 2}`;
-  };
-
+const Chart = () => {
   return (
-    <div className="progress-container">
-      <div className="chart-wrapper">
-        <svg width={size} height={size} className="progress-ring">
-          {/* Background circles */}
-          <path d={getPath(radius)} className="progress-ring-circle-bg outer" />
-          <path
-            d={getPath(radius - strokeWidth - 4)}
-            className="progress-ring-circle-bg inner"
-          />
-
-          {/* Progress circles */}
-          <path
-            d={getPath(radius)}
-            className="progress-ring-circle coffee"
-            style={getPathProperties(outerProgress)}
-          />
-          <path
-            d={getPath(radius - strokeWidth - 4)}
-            className="progress-ring-circle tea"
-            style={getPathProperties(innerProgress)}
-          />
-        </svg>
+    <div className="chart-container">
+      <div className="chart-header">
+        <h3 className="chart-title">Sales</h3>
+        <button className="chart-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            height="12"
+          >
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </button>
       </div>
-
-      <div className="legend-panel">
-        <div className="legend-header">
-          <span>Sale</span>
-          <span className="time-period">This Week</span>
+      <div className="chart-body">
+        <ResponsiveContainer width="100%" height={200}>
+          <PieChart>
+            <Pie
+              data={data}
+              innerRadius={60}
+              outerRadius={80}
+              paddingAngle={5}
+              dataKey="value"
+            >
+              {data.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
+              ))}
+            </Pie>
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
+      <div className="legend-items">
+        <div className="legend-item">
+          <span className="legend-dot coffee"></span>
+          <span className="legend-label">Coffee</span>
         </div>
-        <div className="legend-items">
-          <div className="legend-item">
-            <span className="legend-dot coffee"></span>
-            <span>Coffee</span>
-          </div>
-          <div className="legend-item">
-            <span className="legend-dot tea"></span>
-            <span>Tea</span>
-          </div>
+        <div className="legend-item">
+          <span className="legend-dot tea"></span>
+          <span className="legend-label">Tea</span>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Chart;
