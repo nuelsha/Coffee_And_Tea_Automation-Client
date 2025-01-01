@@ -1,0 +1,48 @@
+.graph-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.grid-line {
+  stroke: #e0e0e0;
+  stroke-width: 1;
+}
+
+.line-path {
+  fill: none;
+  stroke: #2eb086;
+  stroke-width: 2;
+}
+
+.data-point {
+  fill: #2eb086;
+  stroke: white;
+  stroke-width: 2;
+}
+
+.axis-label {
+  font-size: 12px;
+  fill: #666;
+  font-family: sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .graph-container {
+    padding: 10px;
+  }
+
+  .axis-label {
+    font-size: 10px;
+  }
+}
