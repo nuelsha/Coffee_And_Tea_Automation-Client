@@ -1,28 +1,28 @@
 import React from "react";
 import "./Dashboard.css";
 import Header from "./header";
-import Chart from "./chart";
-import LineGraph from "./line-graph";
+import SalesOverview from "./SalesOverview";
+import UserGrowth from "./UserGrowth";
+import ProductSales from "./ProductSales";
+import DashboardOverview from "./DashboardOverview";
 
 function Dashboard() {
   return (
     <div className="dashboard">
       <Header />
-      <div className="stats">
-        <div className="stat">
-          1000 <span>sales</span>
+      <DashboardOverview />
+      <div className="charts-grid">
+        <div className="chart-card">
+          <SalesOverview />
         </div>
-        <div className="stat">
-          10,000 <span>total earned</span>
-        </div>
-        <div className="stat">
-          500 <span>total users</span>
+        <div className="chart-card">
+          <UserGrowth />
         </div>
       </div>
-
-      <div className="charts">
-        <LineGraph />
-        <Chart />
+      <div className="product-sales-container">
+        <div className="chart-card">
+          <ProductSales />
+        </div>
       </div>
     </div>
   );
