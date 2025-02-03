@@ -1,0 +1,55 @@
+/* payment.css */
+.payment-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #333; /* Blackish background */
+  padding: 20px;
+}
+
+.payment-page h1 {
+  font-size: 2rem;
+  color: #fff; /* White text color */
+  margin-bottom: 20px;
+}
+
+.payment-info {
+  background-color: #444; /* Darker card background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.payment-info p {
+  font-size: 1.2rem;
+  color: #ccc; /* Light gray text */
+}
+
+.payment-info p:first-child {
+  font-weight: bold;
+}
+
+button {
+  padding: 15px 30px;
+  background-color: #f6ce03;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #e5ba00;
+}
+
+button:focus {
+  outline: none;
+}

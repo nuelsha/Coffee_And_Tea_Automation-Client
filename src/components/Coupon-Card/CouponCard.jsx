@@ -1,14 +1,23 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for redirect
 import Coffee from "../../assets/Leonardo_Phoenix_A_dimly_lit_moody_scene_featuring_a_steaming_2.jpg";
 import Tea from "../../assets/Leonardo_Phoenix_A_serene_elegant_scene_showcasing_a_steaming_0.jpg";
 import "./couponCard.css";
-import { useDispatch } from "react-redux";
 import { setOpen } from "../../redux/AddItem/add-item-action";
+
 const CouponCard = (props) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // Hook to navigate
+
   const handleClick = () => {
-    dispatch(setOpen(props.title));
+    dispatch(setOpen(props.title)); // Optional: handle the state if needed
+
+    // Redirect to Chappa Payment page when "Add" is clicked
+    // navigate("/payment", { state: { title: props.title, price: props.price } });
+    // You can pass additional data like title and price via `state` if needed
   };
+
   return (
     <div className="coupon">
       <div className="coupon-card">
