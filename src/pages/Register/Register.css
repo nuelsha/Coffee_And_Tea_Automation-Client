@@ -1,0 +1,73 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #2c2c2c; /* Blackish background */
+}
+
+.register-card {
+  background: #333; /* Slightly lighter background for the card */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 300px;
+  color: white; /* Text color set to white for contrast */
+}
+
+.register-card h2 {
+  margin-bottom: 20px;
+  color: #f6ce03; /* Yellowish color for heading */
+}
+
+.register-card input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #444; /* Dark input background */
+  color: white;
+}
+
+.register-card input::placeholder {
+  color: #bbb; /* Light gray placeholder text */
+}
+
+.register-card button {
+  width: 100%;
+  padding: 10px;
+  background: #f6ce03;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.register-card button:hover {
+  background: #e5ba00;
+}
+
+.register-card p {
+  margin-top: 10px;
+}
+
+.register-card span {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.register-card span:hover {
+  text-decoration: underline;
+}
+.register-card a {
+  color: #f6ce03; /* Yellow color for the link */
+  text-decoration: none; /* Remove underline */
+}
+
+.register-card a:hover {
+  text-decoration: underline; /* Underline on hover */
+  color: #e5ba00; /* Slightly darker yellow on hover */
+}

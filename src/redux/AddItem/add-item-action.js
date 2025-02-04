@@ -1,7 +1,6 @@
 import { addItemActionTypes } from "./add-item-action-types";
 
 export const setOpen = (item, order) => {
-  console.log(order)
   return {
     type:
       order === true

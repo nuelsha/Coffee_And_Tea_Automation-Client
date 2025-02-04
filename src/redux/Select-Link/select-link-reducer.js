@@ -1,7 +1,7 @@
 import { selectLinkActions } from "./select-link-action-types";
 
 const INITIAL_STATE = {
-  selectedLink: "History",
+  selectedLink: "Purchase",
 };
 
 const selectLinkReducer = (state = INITIAL_STATE, action) => {
