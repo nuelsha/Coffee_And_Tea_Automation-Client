@@ -4,47 +4,21 @@
   --text-color: #fff;
   --title-font-size: 4.5rem; /* Responsive font size */
   --detail-font-size: 1.25rem;
+  --highlight-color: #f6ce03; /* Adjust this if needed */
 }
 
 .homePage {
-  background: #fff;
   width: 100%;
-  height: 100vh;
+  height: 100vh; /* Full height of the viewport */
   background-image: url("../../assets/vecteezy_ai-generated-coffee-cup-on-the-table_35382878.jpeg");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 0;
+  background-size: cover; /* Ensures the image covers the full page */
+  background-position: center; /* Centers the background image */
+  background-attachment: fixed; /* Keeps the background image fixed on scroll (optional) */
+  position: fixed; /* Fixes the background in place */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensures the background stays behind the content */
   overflow: hidden;
-}
-
-.home-container {
-  width: 100%;
-  padding: var(--container-padding);
-  z-index: 2;
-  padding-left: 100px;
-}
-
-.home-text {
-  width: 100%;
-  margin-left: 20px;
-  color: var(--text-color);
-  z-index: 3;
-  position: relative;
-}
-
-.home-title {
-  color: var(--text-color);
-  font-size: var(--title-font-size);
-  font-weight: 600;
-  margin-bottom: 0rem;
-}
-
-.home-detail {
-  font-size: var(--detail-font-size);
-  width: 50%;
-  padding-right: 30px;
-  line-height: 1.6;
 }
 
 .homepage-overlay {
@@ -53,12 +27,57 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--secondary-color);
+  background: rgba(0, 0, 0, 0.3); /* Lighten overlay */
   z-index: 1;
 }
+
+.home-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the container */
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.home-text {
+  color: var(--text-color);
+  max-width: 800px; /* Restrict text width */
+  margin: 0 auto;
+  text-align: center; /* Ensures text is centered */
+}
+
+.home-title {
+  font-size: var(--title-font-size);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.home-detail {
+  font-size: var(--detail-font-size);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: center; /* Ensures paragraph is centered */
+}
+
 .coupon-link {
   text-decoration: none;
-  color: #f6ce03;
+  color: var(--highlight-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--highlight-color);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.coupon-link:hover {
+  background-color: var(--highlight-color);
+  color: #000;
 }
 
 @media (max-width: 682px) {
@@ -68,8 +87,8 @@
     justify-content: center;
     height: 80vh;
   }
+
   .home-text {
-    height: 400px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -80,6 +99,7 @@
   .home-title {
     font-size: 35px;
   }
+
   .home-detail {
     font-size: 15px;
     text-align: center;
@@ -96,8 +116,8 @@
     height: 80vh;
     padding: 0px;
   }
+
   .home-text {
-    height: 400px;
     width: 100%;
     display: flex;
     flex-direction: column;

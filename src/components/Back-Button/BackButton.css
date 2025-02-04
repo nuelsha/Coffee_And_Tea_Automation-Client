@@ -1,0 +1,24 @@
+.back-button {
+  position: fixed;
+  bottom: 20px; /* Adjust distance from bottom */
+  right: 20px; /* Adjust distance from right */
+  background-color: #f6ce03; /* Button color */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  transition: background 0.3s ease-in-out;
+}
+
+.back-button:hover {
+  background-color: #d4b302; /* Darker yellow on hover */
+}
+
+.back-icon {
+  font-size: 20px;
+}

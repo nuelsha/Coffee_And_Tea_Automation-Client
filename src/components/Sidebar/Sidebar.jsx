@@ -29,11 +29,13 @@ const Sidebar = ({ names }) => {
             key={name}
             onClick={() => {
               dispatch(setSelectedLink(name)); // Set selected link in Redux
-            }}>
+            }}
+          >
             <li
               className={`sidebar-element ${
                 selectedLink === name ? "active" : ""
-              }`}>
+              }`}
+            >
               {name}
             </li>
           </Link>
