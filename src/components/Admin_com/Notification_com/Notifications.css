@@ -94,7 +94,10 @@
   align-items: flex-start;
   margin-bottom: 8px;
 }
-
+.notification-message-container{
+  display: flex;
+  width: 50%;
+}
 .urgent-badge,
 .warning-badge,
 .info-badge {

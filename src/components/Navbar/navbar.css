@@ -6,8 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between; /* Space out elements */
-  padding: 0 20px; /* Add padding for spacing */
-  background: rgba(255, 255, 255, 0.1); /* Slight transparent background */
+  background: rgb(54, 54, 54); /* Slight transparent background */
   z-index: 1000;
 }
 

@@ -58,7 +58,9 @@
   cursor: pointer;
   padding: 10px 20px;
   border-radius: 10px;
-  background: #6f4f37;
+  background: #e5ba00;
+  color: #000000;
+  font-weight: 500;
 }
 
 @media (max-width: 632px) {

@@ -5,17 +5,15 @@ const Coupon = () => {
   const cardDetails = [
     {
       image: "image",
-      title: "coffee",
-      detail:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum,magni.",
-      price: "12$",
+      title: "Coffee",
+      detail: "Rich, aromatic coffee brewed well. Quick and affordable",
+      price: "15 ETB",
     },
     {
       image: "image",
       title: "tea",
-      detail:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum,magni.",
-      price: "10$",
+      detail: "Smooth, refreshing tea, perfectly steeped every time",
+      price: "10 ETB",
     },
   ];
 

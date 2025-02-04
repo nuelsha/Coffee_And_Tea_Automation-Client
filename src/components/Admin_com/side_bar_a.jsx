@@ -8,7 +8,7 @@ export default function Sidebar() {
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
-        <h1 className="sidebar-title">Admin</h1>
+        {/* <h1 className="sidebar-title">Admin</h1> */}
       </div>
 
       <nav className="sidebar-nav" aria-label="Main navigation">

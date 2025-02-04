@@ -7,7 +7,7 @@ export default function Header() {
       <div className="header-left">
         <button className="profile-button">
           <img
-            src="/placeholder.svg?height=32&width=32"
+            src="https://avatar.iran.liara.run/public"
             alt="Profile avatar"
             className="avatar"
           />

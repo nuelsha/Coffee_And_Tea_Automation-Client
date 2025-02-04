@@ -61,8 +61,8 @@
 
 .add-item-form button {
   padding: 12px;
-  background-color: #5e72e4;
-  color: white;
+  background-color: #e5ba00;
+  color: rgb(21, 21, 21);
   border: none;
   border-radius: 4px;
   font-size: 16px;
@@ -71,5 +71,5 @@
 }
 
 .add-item-form button:hover {
-  background-color: #4a61c0;
+  background-color: #e5bb00bb;
 }

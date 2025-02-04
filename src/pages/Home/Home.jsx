@@ -21,7 +21,7 @@ const Home = () => {
               order, create a coupon, and enjoy the convenience of freshly
               brewed beverages at the touch of a button.
             </p>
-            <Link to="/coupon" className="coupon-link">
+            <Link to="/user/coupon" className="coupon-link">
               Create Coupon
             </Link>
           </div>
