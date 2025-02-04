@@ -1,0 +1,8 @@
+.app-container {
+  display: flex;
+  height: 100vh; /* Make the container fit the screen height */
+}
+
+.dashboard {
+  flex: 1;
+}

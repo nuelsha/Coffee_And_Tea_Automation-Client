@@ -1,0 +1,26 @@
+.app-container {
+  display: flex;
+  height: 100vh; /* Make the container fit the screen height */
+}
+
+.notification {
+  flex: 1;
+}
+
+.notification-header {
+  width: 100%;
+}
+
+.notification-content {
+  width: 100%;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.notification-title {
+  margin-bottom: 20px;
+  text-align: center;
+  color: white;
+}
