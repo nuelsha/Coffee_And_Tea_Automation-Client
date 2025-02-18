@@ -1,3 +1,15 @@
+/* Use the same container classes as admin pages */
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+}
+
+.admin-content {
+  flex: 1;
+  margin-left: 250px; /* Match sidebar width */
+}
+
 .live-status-container {
   padding: 20px;
   background-color: #1a1a1a;
