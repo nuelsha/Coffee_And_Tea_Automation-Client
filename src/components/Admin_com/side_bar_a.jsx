@@ -39,6 +39,19 @@ export default function Sidebar() {
               <span>Notifications</span>
             </Link>
           </li>
+          <li>
+            <Link
+              to="/live-status"
+              className={`nav-link ${
+                location.pathname === "/live-status" ? "active" : ""
+              }`}
+            >
+              <svg viewBox="0 0 24 24" className="nav-icon" aria-hidden="true">
+                <path d="M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 4.42-3.58 8-8 8s-8-3.58-8-8c0-4.08 3.05-7.44 7-7.93V2.05C5.86 2.55 2 6.81 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.19-3.86-9.45-9-9.95zM11 6v5.59l-4.71 4.7 1.42 1.42L13 12.41V6h-2z" />
+              </svg>
+              <span>Live Status</span>
+            </Link>
+          </li>
         </ul>
       </nav>
     </aside>
