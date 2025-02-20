@@ -1,0 +1,201 @@
+/* Use the same container classes as admin pages */
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+}
+
+.admin-content {
+  flex: 1;
+  margin-left: 250px; /* Match sidebar width */
+}
+
+.live-status-container {
+  padding: 20px;
+  background-color: #1a1a1a;
+  min-height: 100vh;
+  color: #ffffff;
+}
+
+.live-status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.time-selector {
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border: 1px solid #404040;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.metric-card {
+  background-color: #2d2d2d;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+}
+
+.metric-value {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.metric-change {
+  text-align: center;
+  font-size: 14px;
+}
+
+.metric-change.positive {
+  color: #4CAF50;
+}
+
+.metric-change.negative {
+  color: #f44336;
+}
+
+/* Water Level Styling */
+.water-container {
+  height: 200px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.water-level {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #2196F3;
+  transition: height 0.3s ease;
+}
+
+/* Tea Container Styling */
+.tea-container {
+  height: 200px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tea-level {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #4CAF50;
+  transition: height 0.3s ease;
+}
+
+/* Circle Progress Styling */
+.circle-container {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-progress {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background-color: #795548;
+}
+
+/* Machine Status Styling */
+.status-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.status-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+}
+
+.status-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.status-update {
+  color: #808080;
+  font-size: 14px;
+}
+
+/* Temperature Gauge Styling */
+.temperature-gauge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.gauge-circle {
+  width: 200px;
+  height: 200px;
+  background-color: #1a1a1a;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge-pointer {
+  position: absolute;
+  width: 4px;
+  height: 80px;
+  background-color: #f44336;
+  bottom: 50%;
+  left: calc(50% - 2px);
+  transform-origin: bottom center;
+  transform: rotate(45deg);
+  border-radius: 4px;
+}
+
+.temperature-value {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.wide {
+  height: 200px;
+} 
