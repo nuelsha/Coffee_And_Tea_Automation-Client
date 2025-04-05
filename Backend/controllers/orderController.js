@@ -1,31 +1,58 @@
 const Order = require("../models/orderModel");
-const otpGenerator = require("../util/OTPGenerator");
+const { generateOTP } = require("../util/OTPGenerator.js");
+const Notification = require("../models/notificationModel");
+const User = require("../models/userModel.js");
+const mongoose = require("mongoose");
 const crypto = require("crypto");
 
-// Create Order
 exports.createOrder = async (req, res) => {
-  const { orderType, userId } = req.body;
+  const session = await mongoose.startSession();
+  session.startTransaction();
 
-  console.log(req.body);
-
-  const otp = crypto.randomInt(100000, 999999).toString();
+  const { order, userId } = req.body;
+  const otp = generateOTP(6);
 
   try {
-    const order = new Order({
+    // 1. Create Order
+    const newOrder = new Order({
       user: userId,
-      orderType: orderType,
-      otp: otpGenerator(6),
+      orderType: order,
+      otp,
     });
 
-    console.log(order);
+    const notification = new Notification({
+      user: userId,
+      message: `Your order has been placed with OTP: ${otp}`,
+      metadata: { orderId: newOrder._id },
+    });
 
-    await order.save();
-    res.status(201).json(order);
+    console.log(userId);
+
+    try {
+      await notification.save({ session });
+      await newOrder.save({ session });
+      await User.findByIdAndUpdate(
+        userId,
+        { $push: { notifications: notification._id } },
+        { session }
+      );
+      console.log("Order saved successfully");
+    } catch (saveError) {
+      console.error("Error saving order:", saveError);
+    }
+
+    // 3. Commit transaction
+    await session.commitTransaction();
+    session.endSession();
+
+    res.status(201).json(newOrder);
   } catch (error) {
-    res.status(500).json({ error: "Failed to create order" });
+    // 4. Rollback transaction on error
+    await session.abortTransaction();
+    session.endSession();
+    res.status(500).json({ error: "Failed to create order and notification" });
   }
 };
-
 // Get Orders
 exports.getOrders = async (req, res) => {
   try {
@@ -33,6 +60,23 @@ exports.getOrders = async (req, res) => {
     res.json(orders);
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch orders" });
+  }
+};
+
+// Get single Order for machine
+exports.getSingleOrder = async (req, res) => {
+  const { otp } = req.body;
+
+  try {
+    const order = await Order.findOne({ otp }).populate("user", "name email");
+
+    if (!order) {
+      return res.status(404).json({ error: "Order not found" });
+    }
+
+    res.json(order);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch order" });
   }
 };
 

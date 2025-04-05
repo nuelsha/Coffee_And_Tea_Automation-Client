@@ -10,7 +10,6 @@ function generateOTP(length = 6) {
   return otp;
 }
 
-const otp = generateOTP(6); // You can change the length here, default is 6
-console.log(`Generated OTP: ${otp}`);
+
 
 module.exports = { generateOTP };

@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const setToken = require("../util/setToken.js");
 const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
+const Notification = require("../models/notificationModel");
 
 // ✅ Get User Profile (Protected Route)
 exports.getUserProfile = asyncHandler(async (req, res) => {
@@ -88,3 +89,19 @@ exports.loginUser = asyncHandler(async (req, res) => {
   setToken(res, token);
   res.json({ message: "Login successful", token });
 });
+
+exports.getNotification = async (req, res) => {
+  const { userId } = req.params; // or req.user._id if using auth middleware
+  console.log(userId);
+  try {
+    const notifications = await Notification.find({ user: userId }).sort({
+      createdAt: -1,
+    }); // newest first
+
+    console.log(notifications);
+
+    res.json(notifications);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch notifications" });
+  }
+};

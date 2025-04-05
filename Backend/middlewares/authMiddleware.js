@@ -3,8 +3,6 @@ const User = require("../models/userModel");
 const asyncHandler = require("express-async-handler");
 
 const protect = asyncHandler(async (req, res, next) => {
-  console.log(req.cookies); // Debug: Log cookies to see if JWT is present
-
   const token = req.cookies?.jwt || req.headers.authorization?.split(" ")[1];
 
   if (!token) {
