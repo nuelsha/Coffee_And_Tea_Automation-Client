@@ -5,6 +5,7 @@ const connectDB = require("./config/db");
 const cookieParser = require("cookie-parser");
 const userRoutes = require("./routes/userRoutes");
 const orderRoutes = require("./routes/orderRoutes");
+const couponRoutes = require("./routes/couponRoutes");  
 
 const app = express();
 
@@ -16,6 +17,7 @@ connectDB();
 
 app.use("/api/users", userRoutes);
 app.use("/api/orders", orderRoutes);
+app.use("/api/coupons", couponRoutes);
 
 app.get("/", (req, res) => {
   res.send("Server is running...");

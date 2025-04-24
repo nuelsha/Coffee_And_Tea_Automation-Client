@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.post("/", protect, createOrder);
 router.get("/", protect, getOrders);
-router.get("/order", getSingleOrder);
+router.post("/order", getSingleOrder);
 router.delete("/:id", protect, deleteOrder);
 
 module.exports = router;
