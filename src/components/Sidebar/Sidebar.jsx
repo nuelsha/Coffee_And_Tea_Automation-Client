@@ -44,5 +44,4 @@ const Sidebar = ({ names }) => {
     </div>
   );
 };
-
 export default Sidebar;

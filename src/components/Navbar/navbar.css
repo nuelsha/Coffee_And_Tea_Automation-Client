@@ -6,36 +6,44 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(to right, #2c2c2c, #363636); /* Gradient background */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  background: linear-gradient(to right, #2c2c2c, #363636);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  padding: 0 20px; /* Add horizontal padding */
+  padding: 0 20px;
+  box-sizing: border-box; /* Ensure padding doesn’t affect width */
 }
 
-.navlinks {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navlink {
-  list-style: none;
-  margin: 0 15px;
+.logo {
   display: flex;
   align-items: center;
+  width: 10%; /* Logo takes 10% of the screen width */
 }
 
 .logo img {
   height: 45px;
   width: 45px;
-  margin-left: 5px;
+  margin-right: 10px;
   transition: transform 0.3s ease;
 }
 
 .logo img:hover {
   transform: scale(1.05);
+}
+
+.aait-logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-items-right {
+  display: flex;
+  align-items: center;
+  width: 90%; /* Buttons take 90% of the screen width */
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 15px; /* Space between buttons */
 }
 
 .register {
@@ -65,49 +73,6 @@
   transition: all 0.3s ease;
 }
 
-.user-info {
-  color: #f6ce03;
-  font-weight: 600;
-  margin-left: 15px;
-  display: flex;
-  align-items: center;
-}
-
-.user-info span {
-  position: relative;
-  padding-bottom: 2px;
-}
-
-.user-info span::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: #f6ce03;
-  transition: width 0.3s ease;
-}
-
-.user-info span:hover::after {
-  width: 100%;
-}
-
-.profile-link {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  padding: 5px 15px;
-  border-radius: 20px;
-  background-color: rgba(246, 206, 3, 0.1);
-}
-
-.profile-link:hover {
-  color: #222;
-  background-color: #f6ce03;
-}
-
 .register:hover {
   background-color: #e5ba00;
   transform: translateY(-2px);
@@ -119,65 +84,49 @@
   color: #222;
 }
 
-.aait-logo {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #f6ce03;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
 @media (max-width: 768px) {
   .navbar {
     padding: 0 10px;
   }
-  
-  .navlink {
-    margin: 0 10px;
-  }
-  
-  .register, .logout-btn {
+
+  .register,
+  .logout-btn {
     padding: 6px 16px;
     font-size: 14px;
   }
-  
-  .profile-link {
-    padding: 4px 12px;
+
+  .logo {
+    width: 15%; /* Slightly larger logo for smaller screens */
+  }
+
+  .nav-items-right {
+    width: 85%; /* Adjust button area */
   }
 }
 
 @media (max-width: 576px) {
   .navbar {
-    height: auto;
-    padding: 10px;
     flex-direction: column;
+    height: auto;
+    padding: 15px;
   }
-  
-  .navlinks {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .navlink {
-    margin: 5px;
-  }
-  
+
   .logo {
-    margin-bottom: 10px;
-  }
-  
-  .logo img {
-    height: 40px;
-    width: 40px;
-  }
-  
-  .user-info {
-    order: -1;
-    width: 100%;
-    text-align: center;
-    margin: 0 0 10px 0;
+    width: 100%; /* Full width for logo on small screens */
     justify-content: center;
+  }
+
+  .nav-items-right {
+    width: 100%; /* Full width for buttons */
+    margin-top: 15px;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow buttons to wrap if needed */
+  }
+
+  .register,
+  .logout-btn {
+    width: 100%; /* Full-width buttons on small screens */
+    text-align: center;
+    margin: 5px 0;
   }
 }
