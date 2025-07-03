@@ -1,26 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { login, register } from "../../redux/Auth/auth-actions";
 import "./Register.css";
 
 const Register = () => {
   const [isSignIn, setIsSignIn] = useState(true);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate(); // Hook to navigate
+  const [message, setMessage] = useState(null);
+  
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  
+  const auth = useSelector((state) => state.auth);
+  const { loading, error, isAuthenticated } = auth;
+
+  useEffect(() => {
+    // If user is already authenticated, redirect to user page
+    if (isAuthenticated) {
+      navigate("/user");
+    }
+  }, [isAuthenticated, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setMessage(null);
 
-    // Example authentication logic (can be customized)
     if (isSignIn) {
-      // You would usually make an API call here to verify credentials
-      // If the credentials are correct:
-      // Redirect to the appropriate page (User or Coupon)
-      navigate("/user"); // Or '/coupon' depending on the condition
+      // Login
+      if (!email || !password) {
+        setMessage("Please fill in all fields");
+        return;
+      }
+      dispatch(login(email, password));
     } else {
-      // Handle sign-up logic (you can navigate to a different page if needed)
-      // For now, we stay on the same page
-      alert("Account Created Successfully!");
+      // Register
+      if (!name || !email || !password) {
+        setMessage("Please fill in all fields");
+        return;
+      }
+      dispatch(register(name, email, password));
     }
   };
 
@@ -30,7 +51,15 @@ const Register = () => {
         <h2>{isSignIn ? "Sign In" : "Create Account"}</h2>
 
         <form onSubmit={handleSubmit}>
-          {!isSignIn && <input type="text" placeholder="Full Name" required />}
+          {!isSignIn && (
+            <input
+              type="text"
+              placeholder="Full Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          )}
           <input
             type="email"
             placeholder="Email"
@@ -45,8 +74,13 @@ const Register = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+          
+          {message && <div className="error-message">{message}</div>}
+          {error && <div className="error-message">{error}</div>}
 
-          <button type="submit">{isSignIn ? "Sign In" : "Sign Up"}</button>
+          <button type="submit" disabled={loading}>
+            {loading ? "Loading..." : isSignIn ? "Sign In" : "Sign Up"}
+          </button>
         </form>
 
         <p>

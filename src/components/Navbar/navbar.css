@@ -5,9 +5,11 @@
   top: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Space out elements */
-  background: rgb(54, 54, 54); /* Slight transparent background */
+  justify-content: space-between;
+  background: linear-gradient(to right, #2c2c2c, #363636); /* Gradient background */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
   z-index: 1000;
+  padding: 0 20px; /* Add horizontal padding */
 }
 
 .navlinks {
@@ -20,48 +22,162 @@
 
 .navlink {
   list-style: none;
-  margin: 0px 20px;
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
-  height: 50px; /* Reduce logo size */
-  width: auto;
-  margin-left: 10px; /* Add spacing from edge */
+  height: 45px;
+  width: 45px;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
 }
 
 .register {
-  background-color: #f6ce0356;
+  background-color: #f6ce03;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 7px 30px;
-  color: #fff;
+  padding: 8px 24px;
+  color: #222;
+  font-weight: 600;
   text-decoration: none;
+  border-radius: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(246, 206, 3, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.logout-btn {
+  background: none;
+  border: 2px solid #f6ce03;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 6px 22px;
+  border-radius: 24px;
+  color: #f6ce03;
+  transition: all 0.3s ease;
+}
+
+.user-info {
+  color: #f6ce03;
+  font-weight: 600;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.user-info span {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.user-info span::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #f6ce03;
+  transition: width 0.3s ease;
+}
+
+.user-info span:hover::after {
+  width: 100%;
+}
+
+.profile-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 5px 15px;
   border-radius: 20px;
-  transition: all 0.2s ease-in-out;
+  background-color: rgba(246, 206, 3, 0.1);
+}
+
+.profile-link:hover {
+  color: #222;
+  background-color: #f6ce03;
 }
 
 .register:hover {
-  background-color: #f6ce0380;
+  background-color: #e5ba00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(246, 206, 3, 0.4);
+}
+
+.logout-btn:hover {
+  background-color: #f6ce03;
+  color: #222;
 }
 
 .aait-logo {
-  width: 50px; /* Adjust size as needed */
-  height: 50px; /* Ensure it's a perfect square */
-  border-radius: 50%; /* Makes the image circular */
-  object-fit: cover; /* Ensures the image fills the circle properly */
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f6ce03;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 522px) {
+@media (max-width: 768px) {
   .navbar {
-    justify-content: center;
+    padding: 0 10px;
   }
+  
+  .navlink {
+    margin: 0 10px;
+  }
+  
+  .register, .logout-btn {
+    padding: 6px 16px;
+    font-size: 14px;
+  }
+  
+  .profile-link {
+    padding: 4px 12px;
+  }
+}
 
+@media (max-width: 576px) {
+  .navbar {
+    height: auto;
+    padding: 10px;
+    flex-direction: column;
+  }
+  
   .navlinks {
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
-
+  
+  .navlink {
+    margin: 5px;
+  }
+  
+  .logo {
+    margin-bottom: 10px;
+  }
+  
   .logo img {
-    height: 40px; /* Adjust for smaller screens */
+    height: 40px;
+    width: 40px;
+  }
+  
+  .user-info {
+    order: -1;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 10px 0;
+    justify-content: center;
   }
 }

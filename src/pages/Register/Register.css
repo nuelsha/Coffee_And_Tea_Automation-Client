@@ -2,73 +2,186 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: #2c2c2c; /* Blackish background */
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+  padding: 20px;
 }
 
 .register-card {
-  background: #333; /* Slightly lighter background for the card */
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  background: #333;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   text-align: center;
-  width: 300px;
-  color: white; /* Text color set to white for contrast */
+  width: 100%;
+  max-width: 380px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, #f6ce03, #e5ba00);
 }
 
 .register-card h2 {
-  margin-bottom: 20px;
-  color: #f6ce03; /* Yellowish color for heading */
+  margin-bottom: 30px;
+  color: #f6ce03;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .register-card input {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background: #444; /* Dark input background */
+  padding: 12px 15px;
+  margin: 12px 0;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
   color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.register-card input:focus {
+  border-color: #f6ce03;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 2px rgba(246, 206, 3, 0.2);
 }
 
 .register-card input::placeholder {
-  color: #bbb; /* Light gray placeholder text */
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .register-card button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
+  margin-top: 10px;
   background: #f6ce03;
   border: none;
-  color: rgb(27, 27, 27);
-  font-weight: 500;
+  color: #222;
+  font-weight: 600;
   cursor: pointer;
   font-size: 16px;
-  border-radius: 5px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .register-card button:hover {
   background: #e5ba00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.register-card button:disabled {
+  background: #999;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .register-card p {
-  margin-top: 10px;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
 }
 
 .register-card span {
-  color: #007bff;
+  color: #f6ce03;
   cursor: pointer;
+  font-weight: 600;
+  margin-left: 5px;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
 .register-card span:hover {
-  text-decoration: underline;
+  color: #e5ba00;
 }
+
+.register-card span::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #f6ce03;
+  transition: width 0.3s ease;
+}
+
+.register-card span:hover::after {
+  width: 100%;
+}
+
 .register-card a {
-  color: #f6ce03; /* Yellow color for the link */
-  text-decoration: none; /* Remove underline */
+  display: inline-block;
+  margin-top: 20px;
+  color: #f6ce03;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .register-card a:hover {
-  text-decoration: underline; /* Underline on hover */
-  color: #e5ba00; /* Slightly darker yellow on hover */
+  color: #e5ba00;
+}
+
+.register-card a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #f6ce03;
+  transition: width 0.3s ease;
+}
+
+.register-card a:hover::after {
+  width: 100%;
+}
+
+.error-message {
+  color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.15);
+  padding: 12px;
+  border-radius: 8px;
+  margin: 15px 0;
+  font-size: 14px;
+  text-align: center;
+  border-left: 3px solid #ff6b6b;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .register-card {
+    padding: 25px 20px;
+  }
+  
+  .register-card h2 {
+    font-size: 24px;
+  }
+  
+  .register-card input,
+  .register-card button {
+    padding: 10px;
+    font-size: 15px;
+  }
 }
